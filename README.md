@@ -14,13 +14,13 @@ Compared to other lambda libraries, the present implementation has several advan
 ## Examples
 
 Example 1:
-```
+```prolog
 ?- maplist(greater_than_2(X) :- X>2, [3, 4, 5]).
 true.
 ```
 
 Example 2:
-```
+```prolog
 ?- maplist(successor(X, Y) :- Y is X+1, [1, 2, 3], List).
 List = [2, 3, 4]
 ```
@@ -28,7 +28,10 @@ List = [2, 3, 4]
 The following examples are adapted from http://www.complang.tuwien.ac.at/ulrich/Prolog-inedit/ISO-Hiord.html.
 
 Example 3:
-```
+```prolog
+?- use_module(library(dif)).
+true
+
 ?- Xs = [A,B], maplist(@(Y) :- dif(X,Y), Xs).
 Xs = [A, B],
 dif(X, A),
@@ -36,8 +39,9 @@ dif(X, B).
 ```
 
 Example 4:
-```
+```prolog
 ?- use_module(library(clpfd)).
+true
 
 ?- Xss = [[1,2],[3]], maplist(maplist(@(X,Y,Z) :- X+Y#=Z), Xss, Yss, Zss).
 Xss = [[1, 2], [3]],
@@ -58,14 +62,15 @@ Zss = [[_4406, _4412], [_4424]],
 The following examples are adapted from https://blog.logtalk.org/tag/lambdas/.
 
 Example 5:
-```
+```prolog
 ?- maplist(swap(A-B, B-A) :- true, [1-a,2-b,3-c], Zs).
 Zs = [a-1, b-2, c-3].
 ```
 
 Example 6:
-```
+```prolog
 ?- use_module(library(clpfd)).
+true
 
 ?- maplist(whatever(X, Y) :- Z#=X+Y, Xs, Ys).
 Xs = Ys, Ys = [] ;
@@ -87,7 +92,7 @@ _4390+_4420#=Z ;
 ## Download and installation
 
 To install and use the module, type:
-```
+```prolog
 ?- pack_install(lambda_abstractions).
 true
 ?- use_module(library(lambda_abstractions)).
