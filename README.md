@@ -1,4 +1,4 @@
-# Prolog Lambdas `library(lambda_abstraction)`
+# Prolog `library(lambda_abstractions)`
 This library provides a minimal set of predicates (currently about 30 lines of code) to implement anonymous predicates (i.e. lambda expressions) in Prolog.
 
 
