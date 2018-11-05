@@ -6,8 +6,8 @@ This library provides a minimal set of predicates (currently about 30 lines of c
 
 Compared to other lambda libraries, the present implementation has several advantages:
 - Lambda expressions are represented using a simple and natural Prolog syntax.
-- Lambda expressions are defined through a local anonymous predicate \_/N whose form is the well-known (Head :- Body) construct. Therefore, there is no need for parameter passing (e.g., using the ^ operator) and no continuations. Note that Body is mandatory (it can be set to true, see below for an example).
-- The scope of variables is easy to see. Singletons are treated as globals. Therefore, there is no need for additional syntax (e.g., \ and +\ operators as in Ulrich Nuemerkel's lambda libray or / and >> operators and {} construct as in Paulo Moura's LogTalk lambdas).
+- Lambda expressions are defined through a local anonymous predicate `_/N` whose form is the well-known `(Head :- Body)` construct. Therefore, there is no need for parameter passing (e.g., using the `^` operator) and no continuations. Note that Body is mandatory (it can be set to true, see below for an example).
+- The scope of variables is easy to see. Singletons are treated as globals. Therefore, there is no need for additional syntax (e.g., `\` and `+\` operators as in Ulrich Nuemerkel's lambda libray or `/` and `>>` operators and `{}` construct as in Paulo Moura's LogTalk lambdas).
 - There is no constraint on the anonymous predicate name. Therefore, code can be made more readable by using informative names in the tradition of Prolog.
 
 
@@ -22,7 +22,7 @@ true.
 Example 2:
 ```prolog
 ?- maplist(successor(X, Y) :- Y is X+1, [1, 2, 3], List).
-List = [2, 3, 4]
+List = [2, 3, 4].
 ```
 
 The following examples are adapted from http://www.complang.tuwien.ac.at/ulrich/Prolog-inedit/ISO-Hiord.html.
@@ -30,7 +30,7 @@ The following examples are adapted from http://www.complang.tuwien.ac.at/ulrich/
 Example 3:
 ```prolog
 ?- use_module(library(dif)).
-true
+true.
 
 ?- Xs = [A,B], maplist(@(Y) :- dif(X,Y), Xs).
 Xs = [A, B],
@@ -41,7 +41,7 @@ dif(X, B).
 Example 4:
 ```prolog
 ?- use_module(library(clpfd)).
-true
+true.
 
 ?- Xss = [[1,2],[3]], maplist(maplist(@(X,Y,Z) :- X+Y#=Z), Xss, Yss, Zss).
 Xss = [[1, 2], [3]],
@@ -70,7 +70,7 @@ Zs = [a-1, b-2, c-3].
 Example 6:
 ```prolog
 ?- use_module(library(clpfd)).
-true
+true.
 
 ?- maplist(whatever(X, Y) :- Z#=X+Y, Xs, Ys).
 Xs = Ys, Ys = [] ;
@@ -94,10 +94,12 @@ _4390+_4420#=Z ;
 To install and use the module, type:
 ```prolog
 ?- pack_install(lambda_abstractions).
-true
+true.
 ?- use_module(library(lambda_abstractions)).
-true
+true.
 ```
-from the Prolog toplevel.
+from the SWI Prolog toplevel.
+
+Please notice that this library has been tested only under SWI Prolog (it relies on the `term_singletons/2` predicate).
 
 Enjoy!
