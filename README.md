@@ -100,6 +100,6 @@ true.
 ```
 from the SWI Prolog toplevel.
 
-Please notice that this library relies on the `term_singletons/2` predicate and has been tested only under SWI Prolog 7.x.
+Please notice that this library relies on `copy_term_nat/2` and `term_singletons/2` predicates and has been tested only under SWI Prolog 7.x.
 
 Enjoy!
