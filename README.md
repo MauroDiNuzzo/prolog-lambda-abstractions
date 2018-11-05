@@ -6,7 +6,7 @@ This library provides a minimal set of predicates (currently about 30 lines of c
 
 Compared to other lambda libraries, the present implementation has several advantages:
 - Lambda expressions are represented using a simple and natural Prolog syntax.
-- Lambda expressions are defined through a local anonymous predicate `_/N` whose form is the well-known `(Head :- Body)` construct. Therefore, there is no need for parameter passing (e.g., using the `^` operator) and no continuations. Note that Body is mandatory (it can be set to true, see below for an example).
+- Lambda expressions are defined through a local anonymous predicate `_/N` whose form is the well-known `(Head :- Body)` construct. Therefore, there is no need for parameter passing (e.g., using the `^` operator) and no continuations. Note that Body is mandatory (it can be set to `true`, see below for an example).
 - The scope of variables is easy to see. Singletons are treated as globals. Therefore, there is no need for additional syntax (e.g., `\` and `+\` operators as in Ulrich Nuemerkel's lambda libray or `/` and `>>` operators and `{}` construct as in Paulo Moura's LogTalk lambdas).
 - There is no constraint on the anonymous predicate name. Therefore, code can be made more readable by using informative names in the tradition of Prolog.
 
@@ -100,6 +100,6 @@ true.
 ```
 from the SWI Prolog toplevel.
 
-Please notice that this library has been tested only under SWI Prolog (it relies on the `term_singletons/2` predicate).
+Please notice that this library relies on the `term_singletons/2` predicate and has been tested only under SWI Prolog 7.x.
 
 Enjoy!
