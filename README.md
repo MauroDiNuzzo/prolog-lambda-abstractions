@@ -143,7 +143,7 @@ X = 5.
 ```
 
 Example 9:
-==
+```prolog
 % side-effects and nesting 
 
 ?- X = 5, ( (X, Y, Z) :- Y is X+X, format('Double of ~w is ~w.\n', [X, Y]), ( (Y, Z) :- Z is Y+Y, format('Double of ~w is ~w.\n', [Y, Z]) ) ).
@@ -204,7 +204,7 @@ Planned improvements include:
 - Test suite 
 - Correct `meta_predicate` declarations (to identify arity for the cross-referencer)
 This issue has been raise in comp.lang.prolog by Ulrich Neumerkel:
-```prolog
+```
 Also, the meta-predicate declarations do not help in identifying 
 the actual arity.  Thus, cross-referencing does not work. Consider: 
 
