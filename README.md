@@ -49,7 +49,7 @@ true.
 Example 2:
 ```prolog
 ?- maplist(( (X, Y) :- Y is X+1 ), [1, 2, 3], List).
-List = [2, 3, 4] 
+List = [2, 3, 4].
 ```
 
 The following examples are adapted from http://www.complang.tuwien.ac.at/ulrich/Prolog-inedit/ISO-Hiord.html.
@@ -190,8 +190,9 @@ ERROR: Arguments are not sufficiently instantiated
 To install and use the module, type:
 ```prolog
 ?- pack_install(lambda_abstractions).
-true
+true.
 ?- use_module(library(lambda_abstractions)).
+true.
 ```
 from the Prolog toplevel.
 
