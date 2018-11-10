@@ -200,7 +200,7 @@ from the Prolog toplevel.
 Enjoy!
 
 
-## Planned Improvements
+## To-Be-Done
 Planned improvements include:
 - Test suite 
 - Correct `meta_predicate` declarations (to identify arity for the cross-referencer)
