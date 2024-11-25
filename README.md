@@ -1,4 +1,4 @@
-# Prolog Lambda Expressions
+# Prolog Lambda Abstractions
 ## `library(lambda_abstractions)`
 
 This library provides a minimal set of predicates (currently about 30 lines of code) 
